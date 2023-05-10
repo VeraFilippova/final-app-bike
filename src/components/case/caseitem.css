@@ -1,0 +1,17 @@
+.case-wrapper{
+  border: 1px solid #c71b06;
+  margin: 20px 0px;
+  border-radius: 5px;
+  padding: 10px 20px ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.case-information{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+

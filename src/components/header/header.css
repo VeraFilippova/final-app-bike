@@ -1,0 +1,35 @@
+header{
+  margin: 0 auto ;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:30px;
+  color: rgb(35, 35, 35);
+}
+
+header nav{
+  display: flex;
+  gap: 100px;
+}
+.header-logo{
+  height: 100px;
+  width: 110px;
+}
+
+.header-logo img{
+  width: 100%;
+}
+
+a{
+  color: black;
+  cursor: pointer;
+}
+a:hover{
+  color: rgb(219, 30, 30);
+}
+
+button a{
+  color: aliceblue;
+}
+

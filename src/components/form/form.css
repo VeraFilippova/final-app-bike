@@ -1,0 +1,25 @@
+.main-form{
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  
+  
+
+}
+
+.main-form select, input{
+
+  
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #b0afaf;
+
+}
+
+select, #davaToday{
+ 
+  color:#b0afaf ;
+  font-size: 16px;
+}
+
