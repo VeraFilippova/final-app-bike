@@ -1,0 +1,15 @@
+.editForm{
+ 
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  padding: 10px;
+}
+.editForm input {
+  width: 50%;
+  margin: 10px 0;
+}
+.editForm select {
+  width: 50%;
+  height: 40px;
+}

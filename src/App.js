@@ -1,22 +1,31 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import OfficerPage from "./components/pages/Case";
-import Posts from "./components/pages/Posts";
-import FormAuth from "./components/pages/FormAuth";
+
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import AppRouter from "./components/AppRouter/AppRouter";
+import { AuthContext } from "./components/context/context";
+import { useState } from "react";
 
 function App() {
+
+const [isAuth, setIsAuth] = useState(false);
+console.log(isAuth);
+
   return (
     <div className="App body-app">
-      <BrowserRouter>
+
+      <AuthContext.Provider value={{
+        isAuth,
+        setIsAuth
+      }}>
+        <BrowserRouter>
         <Header />
         <AppRouter></AppRouter>
-
-        
       </BrowserRouter>
       <Footer></Footer>
+      </AuthContext.Provider>
+      
     </div>
   );
 }

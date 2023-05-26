@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
 import CaseItem from "../case/caseItem";
+import { apiInstance } from "../axios/instance"
 
 const ListCases = () => {
 
@@ -9,12 +10,7 @@ const ListCases = () => {
   const[ article, setArticle] = useState([]);
 
   useEffect(()=>{
-    axios.get('https://sf-final-project-be.herokuapp.com/api/cases/', {
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2ZkNjBhM2E2YzZkNGQ4NDgzMmExYiIsImlhdCI6MTY4MzcxMjQ3MSwiZXhwIjoxNjg0MzE3MjcxfQ.j5ogbXJWkE2mcFlbvK-N_hP8vMj7MjbtfDN3N3XTSVE',
-      },
-    })
+    apiInstance.get('/cases/')
       .then(data => {
         setArticle(data.data.data);
         
