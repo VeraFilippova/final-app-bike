@@ -8,6 +8,7 @@ import Case from "../pages/Case";
 import { useContext } from "react";
 import { AuthContext } from "../context/context";
 import { RecuierAuth } from "../hoc/RecuierAuth";
+import FormSignUp from "../formSignUp/formSignUp";
 
 
 const AppRouter = () => {
@@ -17,6 +18,8 @@ const AppRouter = () => {
 
       <Route path="/posts" element={<Posts></Posts>} />
       <Route path="/formauth" element={<FormAuth></FormAuth>} />
+      <Route path="/formsignup" element={<FormSignUp></FormSignUp>} />
+
       <Route path="/case" element={
         <RecuierAuth>
           <Case></Case>

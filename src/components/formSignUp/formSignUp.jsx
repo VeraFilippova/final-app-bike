@@ -1,33 +1,34 @@
-import {Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
-
+import formauthblock from '../formAuth/formauthblock.css'
 import { AuthContext } from '../context/context';
 import { apiInstance } from "../axios/instance"
 
+import axios from 'axios';
 
+const FormSignUp = () => {
 
-const FormAuthBlock = () => {
-
-  const {  setIsAuth } = useContext(AuthContext);
+  const { isAuth, setIsAuth } = useContext(AuthContext);
 
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('')
+  const [password, setPassword] = useState('');
+  const [clientId, setClientId] = useState('')
 
   const navigate = useNavigate();
 
-  const dataLogin = {
+  const dataSignUp = {
     "email": email,
-    "password": password
+    "password": password,
+    "clientId": clientId
   }
 
 
-  const onSignIn = (e) => {
+  const onSignUp = (e) => {
     e.preventDefault();
-    apiInstance.post('/auth/sign_in', dataLogin)
+    apiInstance.post('/auth/sign_up', dataSignUp)
       .then((data) => {
-        localStorage.setItem('token', data.data.data.token);
-        setIsAuth(true);
-        navigate("/case")
+        console.log('super');
+        navigate("/formauth")
       })
       .catch((error) => {
         console.error(error)
@@ -39,10 +40,10 @@ const FormAuthBlock = () => {
         <form className="form-auth" action="">
           <input type="text" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
           <input type="password" placeholder="password" autoComplete="on" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input type="text" placeholder="clientId" value={clientId} onChange={(e) => setClientId(e.target.value)} />
           <div className="btn-login">
-            <button onClick={onSignIn}>Войти</button>
+            <button onClick={onSignUp}>Зарегистрироваться</button>
             
-            <button><Link to="/formsignup">Регистрация</Link></button>
           </div>
 
         </form>
@@ -50,4 +51,4 @@ const FormAuthBlock = () => {
     )
   }
 
-  export default FormAuthBlock;
+  export default FormSignUp;

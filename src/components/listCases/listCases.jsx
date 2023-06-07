@@ -34,7 +34,7 @@ const ListCases = () => {
           article.map(item=>{
             
             return(
-              <div>
+              <div key ={item._id}>
                 
                 <CaseItem key={item._id} pageId={item._id}  ownerFullName={item.ownerFullName} typeBike={item.type} dataAdd={item.createdAt
               }></CaseItem>

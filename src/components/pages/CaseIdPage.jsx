@@ -30,7 +30,7 @@ const CaseIdPage = () => {
 
   apiInstance.get(`/cases/${id}`)
   .then(data => {
-    console.log(data.data.data);
+    // console.log(data.data.data);
     setOwnerFullName(data.data.data.ownerFullName);
     setTimeAdd(data.data.data.createdAt);
     setColorBike(data.data.data.color);
@@ -53,7 +53,7 @@ const CaseIdPage = () => {
     e.preventDefault();
     apiInstance.put(`/cases/${id}`, editInfo)
       .then((data) => {
-        console.log('edit info')
+        
         navigate("/case")
       })
       .catch((error) => {
