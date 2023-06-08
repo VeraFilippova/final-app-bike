@@ -12,12 +12,13 @@ const Header = () => {
     e.preventDefault();
     localStorage.removeItem('token');
     setIsAuth(false);
+    
 
   }
   return (
     <header>
       <div className="header-logo">
-        <Link to="posts"><img src="https://logopond.com/logos/8870475b1e21c9b8d01bd68b3d96d9e5.png" alt="logo" /></Link>
+        <Link to="/"><img src="https://logopond.com/logos/8870475b1e21c9b8d01bd68b3d96d9e5.png" alt="logo" /></Link>
       </div>
       <nav>
         <Link to="posts">Сообщить о краже</Link>

@@ -5,16 +5,17 @@ import FormAuth from "../pages/FormAuth";
 
 import CaseIdPage from "../pages/CaseIdPage";
 import Case from "../pages/Case";
-import { useContext } from "react";
-import { AuthContext } from "../context/context";
+// import { useContext } from "react";
+// import { AuthContext } from "../context/context";
 import { RecuierAuth } from "../hoc/RecuierAuth";
 import FormSignUp from "../formSignUp/formSignUp";
 
 
 const AppRouter = () => {
-  const { isAuth, setIsAuth } = useContext(AuthContext);
+  // const { isAuth, setIsAuth } = useContext(AuthContext);
   return (
     <Routes>
+      <Route path="/" element={<Posts></Posts>} />
 
       <Route path="/posts" element={<Posts></Posts>} />
       <Route path="/formauth" element={<FormAuth></FormAuth>} />

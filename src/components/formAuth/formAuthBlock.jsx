@@ -27,10 +27,11 @@ const FormAuthBlock = () => {
       .then((data) => {
         localStorage.setItem('token', data.data.data.token);
         setIsAuth(true);
+        
         navigate("/case")
       })
-      .catch((error) => {
-        console.error(error)
+      .catch((data) => {
+       alert(data.response.data.message);
       })
     }
 

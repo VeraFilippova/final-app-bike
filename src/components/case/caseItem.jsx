@@ -1,12 +1,12 @@
 import caseitem from './caseitem.css';
-import axios from "axios";
-import { Link, Route } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+// import axios from "axios";
+import { Link} from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { apiInstance } from "../axios/instance"
 
 
 const Case = ({ keyItem, index, ownerFullName, typeBike, pageId, dataAdd }) => {
-  const url = "https://sf-final-project-be.herokuapp.com/api/cases/"
+  // const url = "https://sf-final-project-be.herokuapp.com/api/cases/"
   const idCase = pageId;
 
 

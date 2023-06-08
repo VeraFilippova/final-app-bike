@@ -1,5 +1,5 @@
 
-import footer from './footer.css'
+import footer from './footer.css';
 
 const Footer =()=>{
   return(

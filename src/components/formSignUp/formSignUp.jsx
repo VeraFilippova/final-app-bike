@@ -1,14 +1,14 @@
 import { useNavigate } from 'react-router-dom';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import formauthblock from '../formAuth/formauthblock.css'
-import { AuthContext } from '../context/context';
+
 import { apiInstance } from "../axios/instance"
 
-import axios from 'axios';
+
 
 const FormSignUp = () => {
 
-  const { isAuth, setIsAuth } = useContext(AuthContext);
+  
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -27,11 +27,10 @@ const FormSignUp = () => {
     e.preventDefault();
     apiInstance.post('/auth/sign_up', dataSignUp)
       .then((data) => {
-        console.log('super');
         navigate("/formauth")
       })
-      .catch((error) => {
-        console.error(error)
+      .catch((data) => {
+        alert(data.response.data.message)
       })
     }
 
